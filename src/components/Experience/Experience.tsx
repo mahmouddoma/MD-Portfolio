@@ -1,13 +1,9 @@
 import { motion } from "framer-motion";
+// import { useEffect, useRef } from "react";
+// import { useInView } from "framer-motion";
 import "./Experience.css";
 
 const Experience = () => {
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
-  // Experience data
   const experiences = [
     {
       id: 1,
@@ -15,7 +11,7 @@ const Experience = () => {
       role: "Software Implementer",
       duration: "April 2024 - Oct 2024",
       description:
-        "Developed and optimized web interfaces using HTML, CSS, JavaScript, and jQuery, enhancing user experience and functionality. Acted as a liaison between clients and the development team, gathering requirements and addressing issues to deliver effective solutions. Analyzed client feedback and resolved technical issues, contributing to improved client satisfaction and system performance.",
+        "Developed and optimized web interfaces using HTML, CSS, JavaScript, and jQuery...",
     },
     {
       id: 2,
@@ -23,19 +19,17 @@ const Experience = () => {
       role: "Front-End Developer",
       duration: "January 2024 - Present",
       description:
-        "Front-End Developer with 1 year of experience creating responsive, user-centric web applications. Expertise in Angular, JavaScript, and HTML/CSS. Skilled in building clean, scalable code and translating design into smooth UI/UX. Passionate about optimizing performance and enhancing user experience. Proven ability to collaborate with cross-functional teams to deliver high-quality software solutions.",
+        "Front-End Developer with 1 year of experience creating responsive web applications...",
     },
   ];
 
-  // Education data
   const education = [
     {
       id: 1,
       institution: "Zagazig University",
       degree: "Bachelor of Arts , French Department",
       duration: "2020 - 2024",
-      description:
-        "Graduated with a Bachelor's degree in French Language and Literature from Zagazig University, Egypt.",
+      description: "Graduated with a Bachelor's degree in French Language...",
     },
     {
       id: 2,
@@ -43,11 +37,10 @@ const Experience = () => {
       degree: "Cross Skilling Angular Nanodegree",
       duration: "August 2022",
       description:
-        "Completed the Angular Nanodegree program, gaining expertise in building dynamic web applications with Angular.",
+        "Completed the Angular Nanodegree program, gaining expertise in Angular development...",
     },
   ];
 
-  // Skills data
   const skills = [
     "Angular",
     "React",
@@ -62,62 +55,98 @@ const Experience = () => {
     "SQL Server",
   ];
 
-  // Achievements data
   const achievements = [
-    "Angular Course",
-    "Completed Udacity Cross Skilling Angular Nanodegree from Ministry of Communications and Information Technology. (August 2022)",
+    "Completed Udacity Cross Skilling Angular Nanodegree (August 2022)",
+    "Developed multiple full-stack projects using Angular",
   ];
 
   return (
-    <motion.div
-      className="experience-container"
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-    >
-      <h1 className="experience-heading">My Experience</h1>
+    <div className="experience-container">
+      <motion.h1
+        className="experience-heading"
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        My Experience
+      </motion.h1>
 
-      {/* Timeline Section */}
+      {/* Experience Section */}
       <div className="timeline">
-        {experiences.map((exp) => (
-          <div key={exp.id} className="timeline-item">
-            <div className="timeline-content">
-              <h3 className="company">{exp.company}</h3>
-              <p className="role">{exp.role}</p>
-              <p className="duration">{exp.duration}</p>
-              <p className="description">{exp.description}</p>
-            </div>
-          </div>
-        ))}
+        {experiences.map((exp, index) => {
+          return (
+            <motion.div
+              key={exp.id}
+              className="timeline-item"
+              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="timeline-content">
+                <h3 className="company">{exp.company}</h3>
+                <p className="role">{exp.role}</p>
+                <p className="duration">{exp.duration}</p>
+                <p className="description">{exp.description}</p>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
 
       {/* Education Section */}
       <div className="education-section">
-        <h2 className="section-heading">Education</h2>
+        <motion.h2
+          className="section-heading"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Education
+        </motion.h2>
         <div className="timeline">
-          {education.map((edu) => (
-            <div key={edu.id} className="timeline-item">
+          {education.map((edu, index) => (
+            <motion.div
+              key={edu.id}
+              className="timeline-item"
+              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
               <div className="timeline-content">
                 <h3 className="institution">{edu.institution}</h3>
                 <p className="degree">{edu.degree}</p>
                 <p className="duration">{edu.duration}</p>
                 <p className="description">{edu.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
       {/* Skills Section */}
       <div className="skills-section">
-        <h2 className="section-heading">Skills</h2>
+        <motion.h2
+          className="section-heading"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Skills
+        </motion.h2>
         <div className="skills-list">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
               className="skill"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
             >
               {skill}
             </motion.div>
@@ -127,16 +156,31 @@ const Experience = () => {
 
       {/* Achievements Section */}
       <div className="achievements-section">
-        <h2 className="section-heading">Achievements</h2>
+        <motion.h2
+          className="section-heading"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Achievements
+        </motion.h2>
         <ul className="achievements-list">
           {achievements.map((achievement, index) => (
-            <li key={index} className="achievement">
+            <motion.li
+              key={index}
+              className="achievement"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
               {achievement}
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
