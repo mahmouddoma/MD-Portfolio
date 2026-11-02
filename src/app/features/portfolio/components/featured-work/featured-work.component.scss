@@ -1,0 +1,64 @@
+﻿:host {
+  display: grid;
+  gap: var(--space-9);
+}
+.project-spread {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+.project-visual {
+  min-inline-size: 0;
+}
+.project-visual > .text-link {
+  margin-block-start: var(--space-3);
+}
+.project-name {
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  margin-block-end: var(--space-4);
+}
+.project-discipline,
+.project-context {
+  font-size: 0.875rem;
+}
+.project-context {
+  color: var(--muted);
+  margin-block-start: var(--space-2);
+}
+.project-summary {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  max-inline-size: 40ch;
+  margin-block-start: var(--space-5);
+}
+dl {
+  display: grid;
+  gap: var(--space-5);
+  margin-block-start: var(--space-6);
+}
+dt {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  margin-block-end: var(--space-2);
+}
+dd {
+  font-size: 0.9375rem;
+}
+.enterprise-spread {
+  grid-template-columns: 1fr 1.25fr;
+}
+.enterprise-spread .project-visual {
+  grid-column: 2;
+  grid-row: 1;
+}
+@media (max-width: 45rem) {
+  .project-spread {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+  .enterprise-spread .project-visual {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}

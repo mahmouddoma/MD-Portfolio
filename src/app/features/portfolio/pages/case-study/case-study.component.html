@@ -1,0 +1,60 @@
+<article class="container">
+  <header class="case-intro">
+    <a class="text-link" [routerLink]="['/', locale().code, 'work']">{{ content().backToWork }}</a>
+    <h1>
+      <bdi>{{ copy().name }}</bdi>
+    </h1>
+    <p class="case-summary">{{ copy().summary }}</p>
+    <div class="case-context">
+      <span>{{ content()[project().kind] }}</span
+      ><span>{{ copy().discipline }}</span>
+    </div>
+  </header>
+  <div class="case-evidence">
+    <app-project-evidence [evidence]="project().evidence" [locale]="locale()" sizes="92vw" />
+  </div>
+  <div class="case-body">
+    <aside class="case-facts" [attr.aria-label]="content().contribution">
+      <dl>
+        <div>
+          <dt>{{ content().contribution }}</dt>
+          <dd>{{ copy().contribution }}</dd>
+        </div>
+        <div>
+          <dt>{{ content().scope }}</dt>
+          <dd>{{ copy().scope }}</dd>
+        </div>
+        <div>
+          <dt>{{ content().technology }}</dt>
+          <dd>
+            @for (technology of project().technologies; track technology) {
+              <bdi class="technology">{{ technology }}</bdi>
+            }
+          </dd>
+        </div>
+      </dl>
+      @if (project().url) {
+        <a class="text-link" [href]="project().url" rel="external"
+          >{{ content().visit }}<span class="sr-only"> — {{ copy().name }}</span></a
+        >
+      }
+    </aside>
+    <div class="case-sections">
+      @for (section of copy().sections; track section.title) {
+        <section>
+          <h2>{{ section.title }}</h2>
+          <p>{{ section.text }}</p>
+        </section>
+      }
+      @if (project().kind === 'enterprise') {
+        <p class="publication-note">{{ content().employerNote }}</p>
+      }
+    </div>
+  </div>
+  <nav class="next-project" [attr.aria-label]="content().otherCase">
+    <p>{{ content().otherCase }}</p>
+    <a [routerLink]="['/', locale().code, 'work', nextProject().id]"
+      ><bdi>{{ nextProject().copy[locale().code].name }}</bdi></a
+    >
+  </nav>
+</article>

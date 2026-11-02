@@ -1,0 +1,17 @@
+﻿@let item = evidence();
+<a class="capture-link" [href]="item.src">
+  <figure>
+    <img
+      [ngSrc]="item.src"
+      [width]="item.width"
+      [height]="item.height"
+      ngSrcset="640w, 960w, 1440w"
+      [sizes]="sizes()"
+      [alt]="item.alt[locale().code]"
+    />
+    <figcaption>
+      <span>{{ item.caption[locale().code] }}</span
+      ><span class="capture-action">{{ content().openCapture }}</span>
+    </figcaption>
+  </figure>
+</a>

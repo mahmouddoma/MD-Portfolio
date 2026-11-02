@@ -1,0 +1,15 @@
+<ul>
+  @for (resource of resources; track resource.id) {
+    <li>
+      <a
+        class="text-link"
+        [href]="resource.href"
+        [attr.download]="resource.download ?? null"
+        [attr.hreflang]="resource.language ?? null"
+        [attr.type]="resource.type ?? null"
+        [attr.rel]="resource.download ? null : 'me external'"
+        >{{ labels()[resource.id] }}</a
+      >
+    </li>
+  }
+</ul>

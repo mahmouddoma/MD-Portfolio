@@ -1,0 +1,73 @@
+<a class="skip-link" href="#main-content" (click)="skipToContent($event)">{{ content().skip }}</a>
+<a class="skip-link" href="#main-content" (click)="skipToContent($event)">{{ content().skip }}</a>
+<header class="site-header-wrapper" [class.is-scrolled]="isScrolled()">
+  <div class="site-header container">
+    <a class="identity" [routerLink]="['/', locale().code]">
+      <span class="identity-name">{{ content().name }}</span>
+      <span class="identity-role">{{ content().role }}</span>
+    </a>
+    <button
+      id="menu-toggle"
+      class="menu-toggle"
+      type="button"
+      aria-controls="site-navigation"
+      [attr.aria-expanded]="menuOpen()"
+      (click)="menuOpen.set(!menuOpen())"
+    >
+      {{ menuOpen() ? content().close : content().menu }}
+    </button>
+    <nav
+      id="site-navigation"
+      class="site-navigation"
+      [class.is-open]="menuOpen()"
+      [attr.aria-label]="content().navigation"
+    >
+      <a
+        [routerLink]="['/', locale().code, 'work']"
+        routerLinkActive="current"
+        ariaCurrentWhenActive="page"
+        >{{ content().work }}</a
+      >
+      <a
+        [routerLink]="['/', locale().code, 'about']"
+        routerLinkActive="current"
+        ariaCurrentWhenActive="page"
+        >{{ content().about }}</a
+      >
+      <a class="nav-contact" [routerLink]="contactUrl()" (click)="menuOpen.set(false)">{{ content().contact }}</a>
+      <a
+        class="language-link"
+        [routerLink]="alternateUrl()"
+        [lang]="alternateLocale()"
+        [attr.hreflang]="alternateLocale()"
+        [dir]="alternateLocale() === 'ar' ? 'rtl' : 'ltr'"
+        [attr.aria-label]="alternateLabel() + ' — ' + content().language"
+      >
+        {{ alternateLabel() }}
+      </a>
+    </nav>
+  </div>
+</header>
+<main id="main-content" tabindex="-1">
+  <router-outlet />
+</main>
+<footer id="contact" class="contact-footer">
+  <div class="container contact-inner">
+    <div>
+      <h2>{{ content().contactTitle }}</h2>
+      <p class="contact-description">{{ content().contactText }}</p>
+      <a
+        class="email-link"
+        [href]="'mailto:' + email"
+        [attr.aria-label]="content().emailLabel + ': ' + email"
+        ><bdi dir="ltr">{{ email }}</bdi></a
+      >
+      <app-profile-links [locale]="locale()" />
+    </div>
+    <p class="availability">{{ content().availability }}</p>
+    <div class="footer-bottom">
+      <a [routerLink]="['/', locale().code]">{{ content().name }}</a>
+      <p>{{ content().footerNote }}</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,70 @@
+<div class="container">
+  <header class="page-intro">
+    <h1>{{ content().aboutTitle }}</h1>
+  </header>
+  <section class="about-story" [attr.aria-label]="content().about">
+    <div>
+      <p class="personal-name">
+        {{ content().name }}<span>{{ content().role }}</span
+        ><span>{{ content().location }}</span>
+      </p>
+      <app-profile-links [locale]="locale()" />
+    </div>
+    <div class="story-copy">
+      @for (paragraph of content().aboutIntro; track paragraph) {
+        <p>{{ paragraph }}</p>
+      }
+    </div>
+  </section>
+  <section class="about-section" aria-labelledby="experience-title">
+    <h2 id="experience-title">{{ content().experienceTitle }}</h2>
+    <ol class="experience-list">
+      @for (item of content().experience; track item.company) {
+        <li class="profile-row">
+          <p class="experience-date">{{ item.dates }}</p>
+          <div>
+            <h3>{{ item.role }}</h3>
+            <p class="company">
+              <bdi>{{ item.company }}</bdi>
+            </p>
+            <p>{{ item.description }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </section>
+  <section class="about-section" aria-labelledby="expertise-title">
+    <h2 id="expertise-title">{{ content().expertiseTitle }}</h2>
+    <dl class="detail-list">
+      @for (item of content().expertise; track item.title) {
+        <div class="profile-row">
+          <dt>{{ item.title }}</dt>
+          <dd>{{ item.text }}</dd>
+        </div>
+      }
+    </dl>
+  </section>
+  <section class="about-section profile-row">
+    <h2>{{ content().educationTitle }}</h2>
+    <p>{{ content().education }}</p>
+  </section>
+  <section class="about-section profile-row" aria-labelledby="learning-title">
+    <h2 id="learning-title">{{ content().learningTitle }}</h2>
+    <div>
+      <ul class="qualifications">
+        @for (qualification of content().certifications; track qualification) {
+          <li>{{ qualification }}</li>
+        }
+      </ul>
+      <h3 class="languages-heading">{{ content().languagesTitle }}</h3>
+      <dl class="language-list">
+        @for (language of content().languages; track language.name) {
+          <div>
+            <dt>{{ language.name }}</dt>
+            <dd>{{ language.level }}</dd>
+          </div>
+        }
+      </dl>
+    </div>
+  </section>
+</div>

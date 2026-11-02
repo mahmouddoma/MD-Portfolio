@@ -1,0 +1,48 @@
+<div class="container">
+  <section class="hero" aria-labelledby="intro-heading">
+    <div class="hero-heading">
+      <h1 id="intro-heading">
+        <span>{{ content().hero[0] }}</span
+        ><span>{{ content().hero[1] }}</span>
+      </h1>
+      <p class="hero-location">
+        <span>{{ content().location }}</span>
+        <span class="location-divider" aria-hidden="true"></span>
+        <span>{{ content().availability }}</span>
+        <span class="location-divider" aria-hidden="true"></span>
+        <bdi>Angular / TypeScript</bdi>
+      </p>
+    </div>
+    <div class="hero-introduction">
+      <p>{{ content().intro }}</p>
+      <a class="button" [routerLink]="['/', locale().code, 'work']">{{ content().explore }}</a>
+    </div>
+  </section>
+  <section class="selected-work" aria-labelledby="selected-heading">
+    <div class="section-heading">
+      <div>
+        <h2 id="selected-heading">{{ content().selected }}</h2>
+        <p>{{ content().selectedIntro }}</p>
+      </div>
+      <a class="text-link" [routerLink]="['/', locale().code, 'work']">{{ content().allWork }}</a>
+    </div>
+    <app-featured-work [locale]="locale()" />
+  </section>
+  <section class="practice" aria-labelledby="practice-heading">
+    <div class="practice-intro">
+      <h2 id="practice-heading">{{ content().practiceTitle }}</h2>
+      <p>{{ content().practiceText }}</p>
+      <a class="text-link" [routerLink]="['/', locale().code, 'about']">{{
+        content().aboutLink
+      }}</a>
+    </div>
+    <div class="practice-details">
+      @for (item of content().practice; track item.title) {
+        <article>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </article>
+      }
+    </div>
+  </section>
+</div>

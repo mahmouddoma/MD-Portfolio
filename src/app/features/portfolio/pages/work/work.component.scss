@@ -1,0 +1,113 @@
+:host {
+  display: block;
+}
+.supporting-work {
+  padding-block-start: var(--space-10);
+}
+.independent-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-8) var(--space-7);
+}
+.independent-project {
+  min-inline-size: 0;
+  transition: transform var(--duration) var(--ease-craft);
+}
+.independent-project:hover {
+  transform: translateY(-3px);
+}
+.independent-project:first-child {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  align-items: center;
+  gap: var(--space-7);
+}
+.independent-description {
+  margin-block-start: var(--space-5);
+}
+.independent-description h3 {
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+}
+.independent-description > p {
+  margin-block-start: var(--space-3);
+}
+.index-discipline,
+.index-contribution,
+.index-context,
+.index-name p {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.independent-description > .text-link {
+  margin-block-start: var(--space-3);
+}
+.project-index {
+  list-style: none;
+  padding: 0;
+}
+.project-index > li {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 0.8fr;
+  align-items: start;
+  gap: var(--space-5) var(--space-6);
+  border-block-start: 1px solid var(--line);
+  padding: var(--space-5) var(--space-4);
+  margin-inline: calc(-1 * var(--space-4));
+  border-radius: var(--radius);
+  transition: background-color var(--duration) var(--ease-snappy);
+}
+.project-index > li:hover {
+  background: rgba(227, 235, 238, 0.45);
+}
+.index-name h3 {
+  font-family: var(--body-font);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+.index-name p {
+  margin-block-start: var(--space-2);
+}
+.index-description {
+  max-inline-size: 50ch;
+}
+.index-contribution {
+  margin-block-start: var(--space-3);
+}
+details {
+  grid-column: 1 / -1;
+}
+summary {
+  cursor: pointer;
+  color: var(--accent);
+  min-block-size: 2.75rem;
+  padding-block: var(--space-2);
+  font-weight: 550;
+  transition:
+    color var(--duration) ease,
+    transform var(--duration) var(--ease-snappy);
+}
+summary:hover {
+  color: var(--ink);
+  transform: translateX(3px);
+}
+:root:lang(ar) summary:hover {
+  transform: translateX(-3px);
+}
+details app-project-evidence {
+  margin-block-start: var(--space-4);
+}
+@media (max-width: 45rem) {
+  .independent-grid,
+  .independent-project:first-child,
+  .project-index > li {
+    grid-template-columns: 1fr;
+  }
+  .independent-project:first-child {
+    gap: 0;
+  }
+  .project-index li {
+    gap: var(--space-4);
+  }
+}

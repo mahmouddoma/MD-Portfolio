@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T09:55:00.854628+00:00",
+  "title": "Design System: Mahmoud Doma Portfolio",
+  "extensions": {
+    "reviewStatus": {
+      "status": "PROVISIONAL ? awaiting user review",
+      "scope": "ALL exact colors, fonts, type metrics, layout, spacing, shapes, motion, breakpoints and component snippets. Only approved creative identity is confirmed.",
+      "evidence": [
+        "src/styles.scss",
+        "src/_fonts.scss",
+        "src/app/features/portfolio/layout/portfolio-shell.component.scss",
+        "src/app/features/portfolio/components/featured-work/featured-work.component.scss",
+        "src/app/features/portfolio/pages/home/home.component.scss"
+      ],
+      "tonalRamps": "Synthesized OKLCH display aids from source hex, not source palette steps or approved colors.",
+      "renderedVerification": "Not performed by this documentation scan."
+    },
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "tonalRamp": [
+          "oklch(15% 0.00284 128.49)",
+          "oklch(26.43% 0.00284 128.49)",
+          "oklch(37.86% 0.00284 128.49)",
+          "oklch(49.29% 0.00284 128.49)",
+          "oklch(60.71% 0.00284 128.49)",
+          "oklch(72.14% 0.00284 128.49)",
+          "oklch(83.57% 0.00284 128.49)",
+          "oklch(95% 0.00284 128.49)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Deep Ink",
+        "tonalRamp": [
+          "oklch(15% 0.02646 228.75)",
+          "oklch(26.43% 0.02646 228.75)",
+          "oklch(37.86% 0.02646 228.75)",
+          "oklch(49.29% 0.02646 228.75)",
+          "oklch(60.71% 0.02646 228.75)",
+          "oklch(72.14% 0.02646 228.75)",
+          "oklch(83.57% 0.02646 228.75)",
+          "oklch(95% 0.02646 228.75)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "tonalRamp": [
+          "oklch(15% 0.02438 232.62)",
+          "oklch(26.43% 0.02438 232.62)",
+          "oklch(37.86% 0.02438 232.62)",
+          "oklch(49.29% 0.02438 232.62)",
+          "oklch(60.71% 0.02438 232.62)",
+          "oklch(72.14% 0.02438 232.62)",
+          "oklch(83.57% 0.02438 232.62)",
+          "oklch(95% 0.02438 232.62)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Slate Blue",
+        "tonalRamp": [
+          "oklch(15% 0.05189 227.57)",
+          "oklch(26.43% 0.05189 227.57)",
+          "oklch(37.86% 0.05189 227.57)",
+          "oklch(49.29% 0.05189 227.57)",
+          "oklch(60.71% 0.05189 227.57)",
+          "oklch(72.14% 0.05189 227.57)",
+          "oklch(83.57% 0.05189 227.57)",
+          "oklch(95% 0.05189 227.57)"
+        ]
+      },
+      "ice": {
+        "role": "neutral",
+        "displayName": "Ice",
+        "tonalRamp": [
+          "oklch(15% 0.00950 222.06)",
+          "oklch(26.43% 0.00950 222.06)",
+          "oklch(37.86% 0.00950 222.06)",
+          "oklch(49.29% 0.00950 222.06)",
+          "oklch(60.71% 0.00950 222.06)",
+          "oklch(72.14% 0.00950 222.06)",
+          "oklch(83.57% 0.00950 222.06)",
+          "oklch(95% 0.00950 222.06)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Divider",
+        "tonalRamp": [
+          "oklch(15% 0.01073 219.61)",
+          "oklch(26.43% 0.01073 219.61)",
+          "oklch(37.86% 0.01073 219.61)",
+          "oklch(49.29% 0.01073 219.61)",
+          "oklch(60.71% 0.01073 219.61)",
+          "oklch(72.14% 0.01073 219.61)",
+          "oklch(83.57% 0.01073 219.61)",
+          "oklch(95% 0.01073 219.61)"
+        ]
+      },
+      "footer-muted": {
+        "role": "neutral",
+        "displayName": "Footer Muted",
+        "tonalRamp": [
+          "oklch(15% 0.01637 227.00)",
+          "oklch(26.43% 0.01637 227.00)",
+          "oklch(37.86% 0.01637 227.00)",
+          "oklch(49.29% 0.01637 227.00)",
+          "oklch(60.71% 0.01637 227.00)",
+          "oklch(72.14% 0.01637 227.00)",
+          "oklch(83.57% 0.01637 227.00)",
+          "oklch(95% 0.01637 227.00)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "display",
+        "purpose": "PROVISIONAL Latin primary page statements."
+      },
+      "headline": {
+        "displayName": "headline",
+        "purpose": "PROVISIONAL Latin section headings."
+      },
+      "body": {
+        "displayName": "body",
+        "purpose": "PROVISIONAL Latin reading text."
+      },
+      "label": {
+        "displayName": "label",
+        "purpose": "PROVISIONAL Small factual metadata."
+      },
+      "display-ar": {
+        "displayName": "display-ar",
+        "purpose": "PROVISIONAL Arabic primary page statements."
+      },
+      "headline-ar": {
+        "displayName": "headline-ar",
+        "purpose": "PROVISIONAL Arabic section headings."
+      },
+      "body-ar": {
+        "displayName": "body-ar",
+        "purpose": "PROVISIONAL Arabic reading text."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "duration",
+        "value": "160ms",
+        "purpose": "PROVISIONAL shared background-color hover duration; source --duration."
+      },
+      {
+        "name": "state-easing",
+        "value": "ease",
+        "purpose": "PROVISIONAL button and featured-panel state easing."
+      },
+      {
+        "name": "reduced-duration",
+        "value": "0ms",
+        "purpose": "PROVISIONAL --duration under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "45rem",
+        "purpose": "PROVISIONAL shared stacked layouts and in-flow mobile navigation."
+      },
+      {
+        "name": "hero-stack",
+        "value": "55rem",
+        "purpose": "PROVISIONAL home hero only."
+      }
+    ],
+    "focus": {
+      "outline": "2px solid var(--accent)",
+      "outlineOffset": "5px",
+      "footerColor": "var(--paper)",
+      "status": "PROVISIONAL"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "description": "PROVISIONAL ? awaiting user review. Solid editorial action; literal structure translated from the shipped link.",
+      "html": "<a class=\"ds-button\" href=\"#work\">Explore work</a>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-3);min-block-size:3rem;padding:.7rem 1.5rem;background:var(--ink);color:var(--paper);border-radius:var(--radius);text-decoration:none;font-weight:500;font-family:var(--body-font);transition:background-color var(--duration) ease}.ds-button:hover{background:var(--accent)}.ds-button:focus-visible{outline:2px solid var(--accent);outline-offset:5px;}",
+      "refersTo": "button-primary"
+    },
+    {
+      "name": "Text action",
+      "kind": "button",
+      "description": "PROVISIONAL ? awaiting user review. Underlined secondary link with shared focus.",
+      "html": "<a class=\"ds-text-link\" href=\"#about\">About Mahmoud</a>",
+      "css": ".ds-text-link{display:inline-flex;align-items:center;min-block-size:2.75rem;color:var(--ink);font-weight:500;text-decoration-thickness:1px;text-underline-offset:.35em;font-family:var(--body-font);}.ds-text-link:hover{color:var(--accent)}.ds-text-link:focus-visible{outline:2px solid var(--accent);outline-offset:5px;}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "PROVISIONAL ? awaiting user review. Desktop link primitive; framework menu behavior remains in the actual shell.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Portfolio\"><a class=\"ds-current\" aria-current=\"page\" href=\"#work\">Work</a><a href=\"#about\">About</a><a class=\"ds-language\" lang=\"ar\" dir=\"rtl\" href=\"#arabic\">???????</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:var(--space-7);font-family:var(--body-font);}.ds-nav a{display:inline-flex;align-items:center;min-block-size:2.75rem;font-size:.9375rem;color:var(--ink);text-decoration-color:transparent;text-underline-offset:.4em}.ds-nav .ds-current{text-decoration-color:currentColor}.ds-nav a:hover{color:var(--accent)}.ds-nav a:focus-visible{outline:2px solid var(--accent);outline-offset:5px;}.ds-language{border-inline-start:1px solid var(--line);padding-inline-start:var(--space-6)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Crafted Product Editorial",
+    "overview": "The approved identity combines Creative Precision, Quiet Contemporary Editorial, Quiet Confidence, and a Thoughtful & Personal voice. English and Arabic have Equal Creative Presence. These commitments come from DESIGN-DECISIONS.md and PRODUCT.md; they do not approve any exact implementation value.\n\n**PROVISIONAL — awaiting user review:** every exact color, font family, type measurement, spacing, radius, layout, breakpoint and motion value in this document and `.impeccable/design.json` records the current local implementation, not an approved brand standard. The frontmatter is the machine-readable record of that trial implementation; source styles remain the implementation source of truth. Palette names describe existing source roles. Do not treat this record as permission to freeze trial decisions.\n\nThe shipped expression is an editorial folio using actual public-site and NPark captures, with real local enterprise captures; no schematic substitutes remain. Cool paper, ink, slate blue and ice retain the provisional visual identity. Its surface contract is direction 3, seed `c5af597e`, recorded in `src/index.html`: meet Mahmoud, inspect attributed work, read experience, contact by email. The first viewport's two-part statement, introduction and work action describe the current home composition, not a universal layout requirement.\n",
+    "keyCharacteristics": [
+      "Editorial hierarchy with restrained color.",
+      "Verified contributions before decorative imagery.",
+      "Independently composed Latin and Arabic typography.",
+      "Open supporting rows and asymmetric featured spreads.",
+      "Brief state changes and visible keyboard focus."
+    ],
+    "rules": [
+      {
+        "name": "The Evidence Rule",
+        "body": "Color supports readable hierarchy and meaningful project distinction; it does not substitute for verified project evidence.",
+        "section": "colors"
+      },
+      {
+        "name": "The Equal Presence Rule",
+        "body": "Arabic receives its own scale, leading and zero display tracking. Use the locale-aware font properties; do not force Latin metrics onto Arabic. Project names and email preserve mixed-script isolation.",
+        "section": "typography"
+      },
+      {
+        "name": "The Quiet Surface Rule",
+        "body": "Keep hierarchy in type, space, tonal planes and meaningful dividers rather than introducing ornamental elevation.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the approved editorial identity while treating every exact implementation value as PROVISIONAL until user review.",
+      "Do use the shared source tokens and language-aware typography for consistent surfaces.",
+      "Do preserve attribution, mixed-script isolation, visible focus, reduced motion and keyboard access.",
+      "Do preserve real captures and accurately label local sign-in, built-in sample and fallback states."
+    ],
+    "donts": [
+      "Don't present trial fonts, colors, layout or motion as approved brand decisions.",
+      "Don't add fake product captures, invented outcomes, fake terminal imagery or unavailable download links.",
+      "Don't duplicate selectors, add specificity overrides, use !important or preserve obsolete UI code.",
+      "Don't turn the home composition or a single project treatment into a universal brand requirement."
+    ]
+  }
+}

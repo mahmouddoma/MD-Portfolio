@@ -1,0 +1,34 @@
+@for (project of projects; track project.id) {
+  @let copy = project.copy[locale().code];
+  <article
+    appScrollReveal
+    class="project-spread"
+    [class.enterprise-spread]="project.kind === 'enterprise'"
+    [attr.data-project]="project.id"
+  >
+    <div class="project-visual">
+      <h3 class="project-name">
+        <bdi>{{ copy.name }}</bdi>
+      </h3>
+      <app-project-evidence [evidence]="project.evidence" [locale]="locale()" />
+      <a class="text-link" [routerLink]="['/', locale().code, 'work', project.id]"
+        >{{ content().readCase }}<span class="sr-only"> — {{ copy.name }}</span></a
+      >
+    </div>
+    <div class="project-description">
+      <p class="project-discipline">{{ copy.discipline }}</p>
+      <p class="project-context">{{ content()[project.kind] }}</p>
+      <p class="project-summary">{{ copy.summary }}</p>
+      <dl>
+        <div>
+          <dt>{{ content().contribution }}</dt>
+          <dd>{{ copy.contribution }}</dd>
+        </div>
+        <div>
+          <dt>{{ content().scope }}</dt>
+          <dd>{{ copy.scope }}</dd>
+        </div>
+      </dl>
+    </div>
+  </article>
+}
